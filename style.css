@@ -1,0 +1,41 @@
+:root{--cream:#FFF5F0;--blush:#F6D8D8;--rose:#D98B9B;--cherry:#A71935;--burg:#6E1730;--text:#593C40;--card:#FDE9E8}
+*{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--text);font:15px/1.45 "Segoe UI",system-ui,sans-serif}
+h1,h2{font-family:Georgia,"Times New Roman",serif;color:var(--burg);margin:0}h1{font-size:2rem}h2{font-size:1.1rem;margin-bottom:8px}
+.script{font-family:"Segoe Script","Brush Script MT",cursive;color:var(--cherry)}
+#app{max-width:1200px;margin:0 auto;padding:14px}
+header{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;margin-bottom:10px}
+nav{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
+button,select,input,textarea{font:inherit;color:var(--text)}
+button{background:var(--cherry);color:#fff;border:0;border-radius:10px;padding:6px 12px;cursor:pointer;transition:.15s}
+button:hover{background:var(--burg)}button.ghost{background:transparent;color:var(--burg);border:1px solid var(--rose)}button.ghost:hover{background:var(--blush)}
+button.on{background:var(--burg);color:#fff}
+:focus-visible{outline:3px solid var(--burg);outline-offset:2px}
+input,select,textarea{background:#fff8f6;border:1px solid var(--rose);border-radius:8px;padding:4px 8px;max-width:100%}
+textarea{width:100%;min-height:70px;resize:vertical}
+.grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
+.card{background:linear-gradient(160deg,var(--card),var(--blush));border:1px solid var(--rose);border-radius:16px;padding:14px}
+.row{display:flex;gap:8px;align-items:center;padding:6px 0;border-bottom:1px dashed var(--rose);flex-wrap:wrap}
+.row .grow{flex:1;min-width:120px}.done .nm{text-decoration:line-through;opacity:.6}
+.chk{appearance:none;width:22px;height:22px;border:2px solid var(--cherry);border-radius:7px;background:#fff;cursor:pointer;flex:none;display:grid;place-items:center;transition:.15s}
+.chk:checked{background:var(--cherry)}.chk:checked::after{content:"\2665";color:#fff;font-size:13px;animation:pop .25s}
+@keyframes pop{from{transform:scale(0)}to{transform:scale(1)}}
+.tag{font-size:.8rem;padding:1px 8px;border-radius:99px;background:var(--blush);border:1px solid var(--rose)}
+.due{border-left:4px solid var(--cherry);padding-left:6px}.prog{border-left:4px solid var(--rose);padding-left:6px;background:#fff6}
+.bar{height:10px;background:#fff;border-radius:9px;overflow:hidden;border:1px solid var(--rose)}.bar i{display:block;height:100%;background:var(--cherry);transition:width .4s}
+.ring{width:64px;height:64px;border-radius:50%;background:conic-gradient(var(--cherry) calc(var(--p)*1%),#fff 0);display:grid;place-items:center;flex:none}
+.ring b{width:48px;height:48px;border-radius:50%;background:var(--cream);display:grid;place-items:center;font-size:.85rem;color:var(--burg)}
+.big .ring{width:200px;height:200px}.big .ring b{width:170px;height:170px;font-size:2.4rem}
+.dot{display:inline-grid;place-items:center;width:26px;height:26px;border-radius:50%;border:1px solid var(--rose);background:#fff;font-size:.7rem;margin-right:3px}
+.dot.y{background:var(--cherry);color:#fff}
+.chart{display:flex;gap:8px;align-items:flex-end;height:110px}.chart div{flex:1;background:var(--rose);border-radius:6px 6px 0 0;min-height:3px;text-align:center;font-size:.7rem;color:#fff}
+.tm{font-variant-numeric:tabular-nums;color:var(--burg);font-weight:600}
+.banner{background:var(--burg);color:#fff;border-radius:10px;padding:6px 12px;margin-bottom:10px}
+.small{font-size:.85rem}.muted{opacity:.75}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+.ill{flex:none}.hd{cursor:grab;color:var(--rose);user-select:none;padding:0 2px}.strip{display:flex;justify-content:space-between;align-items:center;margin-top:12px;padding:10px 18px;border-radius:14px;background:var(--blush);font-size:1.4rem}
+
+.grid{grid-template-columns:repeat(auto-fit,minmax(min(320px,100%),1fr))}
+#app{padding-bottom:calc(14px + env(safe-area-inset-bottom))}
+input,select,textarea{font-size:16px}
+@media (pointer:coarse){button,select,input:not([type=checkbox]):not([type=color]){min-height:44px}.chk{width:28px;height:28px}.hd{display:none}}
+@media (max-width:520px){h1{font-size:1.5rem}#app{padding:10px}header{gap:6px}.row{gap:6px}}
